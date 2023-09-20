@@ -1,0 +1,231 @@
+<html>
+<head>
+    <title>Places in India</title>
+    <style>
+        body, h1, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f7f7f7;
+        }
+
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 150px;
+            font-size: 16px;
+        }
+
+        .content {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            text-align: left;
+            display: none; 
+        }
+        header h1 {
+            font-size: 24px;
+            margin: 0;
+            text-decoration: underline; 
+        }
+        nav {
+            background-color: yellow;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .content p {
+            font-size: 18px;
+            color: #333;
+        }
+
+            .content {
+            text-align: center;
+        }
+
+        .show-more-button {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><u><b>Different Places to INDIA</b></u></h1>
+    </header>
+    <nav>
+        <a href="Home.html">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </nav>
+    <div class="buttons">
+        <button onclick="toggleContent('scenic')">Scenic</button>
+        <button onclick="toggleContent('museum')">Museum</button>
+        <button onclick="toggleContent('local')">Local Experience</button>
+        <button onclick="toggleContent('history')">History and culture</button>
+        <button onclick="toggleContent('adventure')">Adventure</button>
+    </div>
+
+    <div id="scenic-content" class="content">
+        <p>If you want to view Different scenes of India Try to visit these places</p>
+        <a href="scenic/gandhi.html"><h2>Gandhi Smiriti</h2></a>
+        <a href="scenic/har ki.html"><h2>Har Ki Pauri</h2></a>
+        <a href="scenic/rameswaram.html"><h2>Rameswaram Mandir</h2></a>
+        <div class="hidden">
+            <a href="scenic/shimla.html"><h2>Shimla</h2></a>
+            <a href="scenic/tirupati.html"><h2>Tirupati</h2></a>
+            <a href="scenic/vaishano.html"><h2>Vaishno Devi</h2></a>
+        </div>     
+        <p class="show-more-button" onclick="showMore('scenic')">View More</p>
+    </div>
+
+    <div id="museum-content" class="content">
+        <p>Museums to visit in India...</p>
+        <a href="museum/albert.html"><h2>Albert Hall Museum</h2></a>
+        <a href="museum/museum delhi.html"><h2>National Museum</h2></a>
+        <a href="museum/museum hyderabad.html"><h2>Salar Jung Museum</h2></a>
+        <div class="hidden">
+            <a href="museum/museum kolkata.html"><h2>Indian Museum,Kolkata</h2></a>
+            <a href="museum/museum mumbai.html"><h2> Chhatrapati Shivaji Maharaj Vastu Sangrahalaya</h2></a>
+            <a href="museum/napier.html"><h2>Napier Museum</h2></a>
+            <a href="museum/sarnath.html"><h2>Sarnath Archaeological Site</h2></a>
+            <a href="museum/siddhagiri.html"><h2>Siddhagiri Gramjivan Museum</h2></a>
+            <a href="museum/tirumala.html"><h2>Tirumala Tirupati Devasthanams Museum</h2></a>
+            <a href="museum/victoria museum.html"><h2>Victoria Memorial</h2></a>
+        </div>
+        <p class="show-more-button" onclick="showMore('museum')">View More</p>
+    </div>
+
+    <div id="local-content" class="content">
+        <p>For Local Experience in India you can visit These places</p>
+        <a href="local_experience/ajmer.html"><h2>Ajmer</h2></a>
+        <a href="local_experience/amritsar.html"><h2>Amritsar</h2></a>
+        <a href="local_experience/madurai.html"><h2>Madurai</h2></a>
+        <div class="hidden">
+            <a href="local_experience/manali.html"><h2>Manali</h2></a>
+            <a href="local_experience/munnar.html"><h2>Munnar</h2></a>
+            <a href="local_experience/ooty.html"><h2>Ooty</h2></a>
+            <a href="local_experience/puri.html"><h2>Puri</h2></a>
+            <a href="local_experience/rishikesh.html">Rishikesh</a>
+            <a href="local_experience/santiniketan.html"><h2>Santiniketan</h2></a>
+            <a href="local_experience/shimla.html"><h2>Shimla</h2></a>
+            <a href="local_experience/tirupati.html"><h2>Tirupati</h2></a>
+            <a href="local_experience/varanasi.html"><h2>Varanasi</h2></a>
+        </div>
+        <p class="show-more-button" onclick="showMore('local')">View More</p>
+    </div>
+
+    <div id="history-content" class="content">
+        <p>If you want to enrich the Knowledge about ancient India visit these Places</p>
+        <a href="history_and_culture/ajmer.html"><h2>Ajmer</h2></a>
+        <a href="history_and_culture/amritsar.html"><h2>Amritsar</h2></a>
+        <a href="history_and_culture/hampi.html"><h2>Hampi</h2></a>
+        <div class="hidden">
+            <a href="history_and_culture/har ki.html"><h2>Har ki Pauri</h2></a>
+            <a href="history_and_culture/jaipur.html"><h2 style="color: blue;">Jaipur</h2></a>
+            <a href="history_and_culture/khujrao.html"><h2 style="color: blue;">Khajuraho</h2></a>
+            <a href="history_and_culture/Kumbhalgarh.html"><h2 style="color: blue;">Kumbhalgarh Fort</h2></a>
+            <a href="history_and_culture/madurai.html"><h2>Madurai</h2></a>
+            <a href="history_and_culture/mahabalipuram.html"><h2>Mahabalipuram</h2></a>
+            <a href="history_and_culture/puri.html"><h2>Puri</h2></a>
+            <a href="history_and_culture/rameswaram.html"><h2>Rameswaram</h2></a>
+            <a href="history_and_culture/rishikesh.html"><h2>Rishikesh</h2></a>
+            <a href="history_and_culture/sai.html"><h2>Sai Village</h2></a>
+            <a href="history_and_culture/taj.html"><h2>Taj Mahal</h2></a>
+            <a href="history_and_culture/tirupati.html"><h2>Tirupati</h2></a>
+            <a href="history_and_culture/vaishano.html"><h2>Vaishno Devi</h2></a>
+            <a href="history_and_culture/varanasi.html"><h2>Varanasi</h2></a>
+            <a href="history_and_culture/viswanath.html"><h2>Vishwanath</h2></a>
+        </div>
+        <p class="show-more-button" onclick="showMore('history')">View More</p>
+    </div>
+
+    <div id="adventure-content" class="content">
+        <p>Adventure Places In India</p>
+        <a href="adventure/bandipur.html"><h2>Bandipur National Park</h2></a>
+        <a href="adventure/bannerghata.html"><h2>Bannerghata Biological Park</h2></a>
+        <a href="adventure/bharatpur.html"><h2>Bharatpur Bird Sanctuary - Keoladeo National Park</h2></a>
+        <div class="hidden">
+            <a href="adventure/darjeeling.html"><h2>Darjeeling - Queen of the Himalayas</h2></a>
+            <a href="adventure/dudhwa.html"><h2>Dudhwa National Park</h2></a>
+            <a href="adventure/gir.html"><h2>Gir National Park</h2></a>
+            <a href="adventure/hemis.html"><h2>Hemis National Park</h2></a>
+            <a href="adventure/jim.html"><h2>Jim Corbett National Park</h2></a>
+            <a href="adventure/kanha.html"><h2>Kanha National Park</h2></a>
+            <a href="adventure/kaziranga.html"><h2>Kaziranga National Park</h2></a>
+            <a href="adventure/manali.html"><h2>Manali - The Himalayan Gem</h2></a>
+            <a href="adventure/mookambika.html"><h2>Mookambika Wildlife Sanctuary</h2></a>
+            <a href="adventure/munnar.html"><h2>Munnar - The Tea Paradise</h2></a>
+            <a href="adventure/nehru.html"><h2>Nehru Zoological Park</h2></a>
+            <a href="adventure/ooty.html"><h2>Ooty - The Picturesque Hill Station</h2></a>
+            <a href="adventure/periyar.html"><h2>Periyar Tiger Reserve</h2></a>
+            <a href="adventure/rajiv.html"><h2>Rajiv Gandhi Zoological Park</h2></a>
+            <a href="adventure/ranthambore.html"><h2>Ranthambhore National Park</h2></a>
+            <a href="adventure/salim.html"><h2>Salim Ali Bird Sanctuary</h2></a>
+            <a href="adventure/sanjay.html"><h2>Sanjay Gandhi National Park</h2></a>
+            <a href="adventure/sariska.html"><h2>Sariska Tiger Reserve</h2></a>
+            <a href="adventure/shimla.html"><h2>Shimla - The Charming Hill Station</h2></a>
+            <a href="adventure/sundarban.html"><h2>Sundarbans National Park</h2></a>
+        </div>
+        <p class="show-more-button" onclick="showMore('adventure')">View More</p>
+    </div>
+
+    <script>
+        var currentlyOpen = null;
+
+        function toggleContent(contentId) {
+            var contentElement = document.getElementById(contentId + '-content');
+
+            if (contentElement === currentlyOpen) {
+                contentElement.style.display = "none";
+                currentlyOpen = null;
+            } else {
+                if (currentlyOpen !== null) {
+                    currentlyOpen.style.display = "none";
+                }
+
+                contentElement.style.display = "block";
+                currentlyOpen = contentElement;
+            }
+        }
+
+        function showMore(category) {
+            var hiddenContent = document.querySelector("#" + category + "-content .hidden");
+            var showMoreButton = document.querySelector("#" + category + "-content .show-more-button");
+
+            if (hiddenContent.style.display === "none" || hiddenContent.style.display === "") {
+                hiddenContent.style.display = "block";
+                showMoreButton.textContent = "View Less";
+            } else {
+                hiddenContent.style.display = "none";
+                showMoreButton.textContent = "View More";
+            }
+        }
+    </script>
+</body>
+</html>
