@@ -1,4 +1,4 @@
-    <html>
+<html>
     <head>
         <title>INDIA</title>
         <style>
@@ -232,10 +232,10 @@
         <div><a href="#top">Back to top</a></div>
         <script>
             var currentlyOpen = null;
-    
+        
             function toggleInfo(infoId) {
                 var infoElement = document.getElementById(infoId + '-info');
-    
+        
                 if (infoElement === currentlyOpen) {
                     infoElement.style.display = "none";
                     currentlyOpen = null;
@@ -243,60 +243,84 @@
                     if (currentlyOpen !== null) {
                         currentlyOpen.style.display = "none";
                     }
-    
+        
                     infoElement.style.display = "block";
                     currentlyOpen = infoElement;
                 }
             }
-    
-            function handleCheckboxClick(event) {
-                var checkbox = event.target;
-    
-                if (checkbox.checked) {
-                    var selectedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked');
-    
-                    if (selectedCheckboxes.length <= 3) {
-                        selectedCheckboxes.forEach(function (checkbox, index) {
-                            checkbox.setAttribute('data-priority', index + 1);
-                        });
-                    } else {
-                        checkbox.checked = false;
-                    }
-                } else {
-                    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-                    checkboxes.forEach(function (checkbox, index) {
-                        checkbox.setAttribute('data-priority', 0);
-                    });
-                }
-            }
-    
-            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-            checkboxes.forEach(function (checkbox) {
-                checkbox.addEventListener('click', handleCheckboxClick);
-            });
-    
+        
             var recommendationButton = document.getElementById('recommendation-button');
             var recommendationOptions = document.getElementById('recommendation-options');
-    
+        
             recommendationButton.addEventListener('click', function () {
-                recommendationOptions.style.display = 'block';
-            });
-    
-            var geolocationButton = document.getElementById('geolocation-button');
-    
-            geolocationButton.addEventListener('click', function () {
-                getLocation();
-            });
-    
-            function getLocation() {
-                try {
-                    navigator.geolocation.getCurrentPosition(showPosition);
-                } catch (error) {
-                    // Handle any errors that occur during geolocation request
-                    console.error(error);
+                if (recommendationOptions.style.display === 'none' || recommendationOptions.style.display === '') {
+                    recommendationOptions.style.display = 'block';
+                } else {
+                    recommendationOptions.style.display = 'none';
                 }
-            }
-        </script>   
+            });
+        
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            var submitButton = document.getElementById('submit-button1');
+        
+            submitButton.addEventListener('click', function () {
+                var selectedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+                var selectedValues = Array.from(selectedCheckboxes).map(function (checkbox) {
+                    return checkbox.value;
+                });
+        
+                if (selectedValues.length === 0) {
+                    alert('Please select at least one checkbox.');
+                } else if (selectedValues.length === 1) {
+                    // Redirect to a page based on the single selected option
+                    switch (selectedValues[0]) {
+                        case 'History and culture':
+                            window.location.href = 'history.html';
+                            break;
+                        case 'Scenic':
+                            window.location.href = 'scenic.html';
+                            break;
+                        case 'Local Experience':
+                            window.location.href = 'local.html';
+                            break;
+                        case 'Museum':
+                            window.location.href = 'museum.html';
+                            break;
+                        case 'Adventure':
+                            window.location.href = 'adventure.html';
+                            break;
+                        // Add more cases for other options
+                        default:
+                            alert('Invalid selection.');
+                    }
+                } else if (selectedValues.length === 2) {
+                    // Redirect to a page based on the combination of two selected options
+                    if (selectedValues.includes('Scenic') && selectedValues.includes('History and culture')) {
+                        window.location.href = 'scenic_and_history.html';
+                    } else if (selectedValues.includes('History and culture') && selectedValues.includes('Local Experience')) {
+                        window.location.href = 'history_and_local.html';
+                    } else if (selectedValues.includes('History and culture') && selectedValues.includes('Adventure')) {
+                        window.location.href = 'history_and_adventure.html';
+                    } else if (selectedValues.includes('Museum') && selectedValues.includes('History and culture')) {
+                        window.location.href = 'museum_and_history.html';                
+                    } else if (selectedValues.includes('Museum') && selectedValues.includes('Adventure')) {
+                        window.location.href = 'museum_and_adventure.html';
+                    } else if (selectedValues.includes('Museum') && selectedValues.includes('Local Experience')) {
+                        window.location.href = 'museum_and_local.html';
+                    } else if (selectedValues.includes('Museum') && selectedValues.includes('Scenic')) {
+                        window.location.href = 'museum_and_scenic.html';
+                    } else if (selectedValues.includes('Local Experience') && selectedValues.includes('Scenic')) {
+                        window.location.href = 'local_and_scenic.html';
+                    } else if (selectedValues.includes('Adventure') && selectedValues.includes('Scenic')) {
+                        window.location.href = 'adventure_and_scenic.html';
+                    } else {
+                        window.location.href = 'adventure_and_local.html';
+                    }
+                } else {
+                    alert('Please select only one or two checkboxes.');
+                }
+            });
+        </script>
+        
     </body>
     </html>
-    
